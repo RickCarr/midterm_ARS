@@ -9,7 +9,20 @@ const express = require('express');
 const router  = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('users');
+  res.render('quizzes', quizzes);
 });
+
+// mentor advised alterations -unclear of neccessity-
+// router.get('/', (req, res) => {
+//   quizzesQueries.getUsers()
+//     .then(quiz => {
+//       res.render('quizzes', quizzes)
+//     })
+//     .catch(err => {
+//       res
+//         .status(500)
+//         .json({ error: err.message });
+//     });
+// });
 
 module.exports = router;
