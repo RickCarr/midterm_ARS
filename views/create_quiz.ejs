@@ -5,14 +5,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create Quiz</title>
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css"/>
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css"/>
-  <link rel="stylesheet" href="/styles/layout.scss" type="text/css"/>
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/client.js"></script>
-</head>
+  <head>
+    <title>Quiz App</title>
 
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/app.js"></script>
+  </head>
 <body>
   <header>
     <%- include('partials/_header') %>
@@ -37,7 +46,7 @@
             <form id="quiz-question">
               <label for="question">Your Question:</label>
               <input id="question-text" type="text" name="question">
-          
+
               <br>
               <br>
             </form>
@@ -70,11 +79,12 @@
                 <br>
                 <br>
                 <button type="submit">Add Question</button>
+                <button type="submit">Finish</button>
               </form>
             </div>
           </div>
         </div>
-        <button type="submit">Finish</button>
+
       </form>
     </div>
   </div>
