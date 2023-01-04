@@ -18,13 +18,13 @@
   </header> -->
   <div class="main-container">
     <div id="create-quiz">
-      <h1> Create Your Own Quiz!</h1>
+      <h1> Create Your Quiz!</h1>
       <form id="create-quiz">
         <label for="name">Quiz Title:</label>
         <input id="quiz-title" type="text" name="name">
         <br>
         <div class="privacy">
-          <p>Make your quiz private!</p>
+          <p>Make your quiz private?</p>
           <input type="radio" id="private-yes" name="private" value="yes">
           <label for="private-yes">Yes</label>
           <input type="radio" id="private-no" name="private" value="no">
@@ -37,36 +37,43 @@
               <label for="question">Your Question:</label>
               <input id="question-text" type="text" name="question">
               <button type="submit">Submit question</button>
+              <br>
+              <br>
             </form>
             <div class="answers">
-              <h3>Please create 4 possible answers:</h3>
+              <h3>Please add at least four possible answers:</h3>
+              <br>
               <form id="answers-form">
                 <label for="answer1">Answer 1</label>
                 <input id="textbox1" class="textbox" type="text" name="answer1">
                 <input type="radio" name="isRighta1" value="false">Is incorrect?</input>
                 <input type="radio" name="isRighta1" value="true">Is correct?</input>
                 <br>
+                <br>
                 <label for="answer2">Answer 2</label>
                 <input id="textbox2" class="textbox" type="text" name="answer2">
                 <input type="radio" name="isRighta2" value="false">Is incorrect?</input>
                 <input type="radio" name="isRighta2" value="true">Is correct?</input>
+                <br>
                 <br>
                 <label for="answer3">Answer 3</label>
                 <input id="textbox3" class="textbox" type="text" name="answer3">
                 <input type="radio" name="isRighta3" value="false">Is incorrect?</input>
                 <input type="radio" name="isRighta3" value="true">Is correct?</input>
                 <br>
+                <br>
                 <label for="answer4">Answer 4</label>
                 <input id="textbox4" class="textbox" type="text" name="answer4">
                 <input type="radio" name="isRighta4" value="false">Is incorrect?</input>
                 <input type="radio" name="isRighta4" value="true">Is correct?</input>
                 <br>
-                <button type="submit">Submit answers</button>
+                <br>
+                <button type="submit">Add Question</button>
               </form>
             </div>
           </div>
         </div>
-        <button type="submit">Submit Quiz</button>
+        <button type="submit">Finish</button>
       </form>
     </div>
   </div>
