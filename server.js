@@ -48,6 +48,18 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/create', (req, res) => {
+  res.render('create_quiz');
+});
+
+app.get('/take', (req, res) => {
+  res.render('take_quiz');
+});
+
+app.get('/results', (req, res) => {
+  res.render('results');
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
