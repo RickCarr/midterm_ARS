@@ -43,6 +43,12 @@ const answersRoutes = require('./routes/answers');
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/api/questions', questionsApiRoutes);
+app.use('/questions', questionsRoutes);
+app.use('/api/quizzes', quizzesApiRoutes);
+app.use('/quizzes', quizzesRoutes);
+app.use('/api/answers', answersApiRoutes);
+app.use('/answers', answersRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
