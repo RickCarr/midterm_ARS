@@ -6,11 +6,11 @@ $(() => {
       url: '/api/users'
     })
     .done((response) => {
-      const $usersList = $('#users');
+      const $usersList = $('#users'); //calling element bc of $('...')
       $usersList.empty();
 
       for(const user of response.users) {
-        $(`<li class="user">`).text(user.name).appendTo($usersList);
+        $(`<li class="user">`).text(user.name).appendTo($usersList); // creating element bc of $('<...>')
       }
     });
   });
