@@ -34,15 +34,14 @@ const questionsApiRoutes = require('./routes/questions-api');
 const questionsRoutes = require('./routes/questions');
 const quizzesApiRoutes = require('./routes/quizzes-api');
 const quizzesRoutes = require('./routes/quizzes');
-const userApiRoutes = require('./routes/users-api');
-const usersRoutes = require('./routes/users');
-const widgetApiRoutes = require('./routes/widgets-api');
+const answersApiRoutes = require('./routes/answers-api');
+const answersRoutes = require('./routes/answers');
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
