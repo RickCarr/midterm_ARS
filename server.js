@@ -1,5 +1,6 @@
 // load .env data into process.env
 require('dotenv').config();
+const dbQuery = require('./db/connection')
 
 // Web server config
 const sassMiddleware = require('./lib/sass-middleware');
@@ -60,8 +61,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/create', (req, res) => {
-  res.render('create_quiz');
+  res.render('create_quiz3');
 });
+
+app.post('/quizzes', (req, res) => {
+  console.log(req.body)
+  dbQuery.query()
+})
 
 app.get('/create2', (req, res) => {
   res.render('create_quiz2');
