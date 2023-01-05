@@ -4,5 +4,5 @@ CREATE TABLE quizzes (
   name VARCHAR(255) NOT NULL,
   is_private BOOLEAN DEFAULT false,
   quiz_url VARCHAR(255) NOT NULL,
-  user_name INTEGER REFERENCES users(id).name
+  user_id INTEGER REFERENCES users(id)
   );
