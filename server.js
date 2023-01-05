@@ -63,6 +63,10 @@ app.get('/create', (req, res) => {
   res.render('create_quiz');
 });
 
+app.get('/create2', (req, res) => {
+  res.render('create_quiz2');
+});
+
 app.get('/take', (req, res) => {
   res.render('take_quiz');
 });
