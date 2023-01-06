@@ -5,6 +5,7 @@ const getQuizzes = () => {
     SELECT quizzes.id AS id, quiz_name, users.name AS user_name
     FROM quizzes
     JOIN users ON user_id = users.id
+    WHERE is_private = false
     ORDER by id DESC
     ;`)
     .then(data => {
