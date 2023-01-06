@@ -1,5 +1,12 @@
 body {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  flex-grow: 1;
+
+  min-height: 100vh;
   background: rgb(163, 208, 219);
   background: linear-gradient(
     227deg,
@@ -10,4 +17,13 @@ body {
     rgba(163, 208, 219, 1) 74%,
     rgba(163, 208, 219, 1) 100%
   );
+
+  button {
+    font: rgb(255, 255, 255);   //login button text color not changing
+    background-color: rgb(163, 208, 219);
+    border-radius: 10px;  //button border size not changing
+    border-color: rgb(48, 120, 187);
+    align-self: center;
+    height: 35px;
+  }
 }

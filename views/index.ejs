@@ -25,19 +25,24 @@
 
   <main class="container">
     <section class="buttons">
+      <div>
       <a href="/create">
         <button class="create-button">Create Quiz</button>
       </a>
       <a href="/take">
       <button class="rng-button">Random Quiz</button>
       </a>
-      <div>
         <input type="number" name="quiz_id" placeholder="Enter Quiz ID">
-
         <button class="button">✅</button>
       </div>
+      <br>
     </section>
     <table class="table">
+      <style>
+        table, th, td {
+  border: 1px solid black;
+}
+      </style>
         <thead>
           <tr>
             <th scope="col">ID</th>
