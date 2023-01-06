@@ -10,7 +10,7 @@ const router  = express.Router();
 const questionQueries = require('../db/queries/questions');
 
 router.get('/', (req, res) => {
-  questionQueries.getQuestions()
+  questionQueries.getQuestionsByQuizID(1)
     .then(questions => {
       res.json({ questions });
     })

@@ -110,7 +110,8 @@ app.post('/quizzes', (req, res) => {
   .then(() => {res.redirect('/')})
 })
 
-app.get('/take', (req, res) => {
+app.get('/take/:id', (req, res) => {
+  console.log('taking quiz', req.params.id);
   res.render('take_quiz');
 });
 

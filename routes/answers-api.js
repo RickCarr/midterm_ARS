@@ -6,19 +6,20 @@
  */
 
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 const answerQueries = require('../db/queries/answers');
 
 router.get('/', (req, res) => {
   answerQueries.getAnswers()
-    .then(users => {
-      res.json({ users });
+    .then(answers => {
+      res.json({ answers });
     })
     .catch(err => {
       res
         .status(500)
         .json({ error: err.message });
     });
+
 });
 
 module.exports = router;
