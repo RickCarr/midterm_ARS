@@ -25,16 +25,19 @@
   <header>
     <%- include('partials/_header') %>
   </header>
+<div class="main-container">
+  <br>
   <div class="quiz-container">
     <div class="take-quiz-container">
-      <h2>Your Quiz:</h2>
+      <h2 id="quiz-name">Take Quiz</h2>
       <h3>Only choose one answer per question</h3>
       <div>
+        <% for (question in quizzes.questions) { %>
+
+        <%}%>
         <form >
-          <div class="questions-and-answers">
-            <div class="answers">
-            </div>
-          </div>
+          <thead id="question-list"></thead>
+          <label for="name">Your Name:</label>
           <button class="btn-submit_answer" type="submit">Complete Quiz</button>
         </form>
       </div>
@@ -42,3 +45,5 @@
   </div>
 </body>
 </html>
+
+

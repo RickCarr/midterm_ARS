@@ -2,17 +2,27 @@
 const tableRow = (quizData) => {
   const trElement = `<tr>
   <td>
-    <a>${quizData.id}</a>
+    ${quizData.id}
   </td>
   <td>
-    <a>${quizData.quiz_name}</a>
+    <a href="/take/${quizData.id}">${quizData.quiz_name}</a>
   </td>
   <td>
-    <a>${quizData.user_name}</a>
+    ${quizData.user_name}
   </td>
 </tr>`
 return trElement;
 };
+
+const questionRow = (questionData) => {
+  const questionElement = `
+  <label>Question</label>
+  <a id="question">${questionData.question}</a>
+  <br>`
+
+return questionElement;
+}
+
 
 $(() => {
   $.ajax({
@@ -20,13 +30,27 @@ $(() => {
     url: '/api/quizzes'
   })
   .done((response) => {
-    console.log(response);
     const $quizList = $('#quiz-list'); //calling element bc of $('...')
     $quizList.empty();
 
     for(const quiz of response.quizzes) {
       const $tableRow = tableRow(quiz);
       $quizList.append($tableRow);
+    }
+  });
+
+  $.ajax({
+    method: 'GET',
+    url: '/api/questions'
+  })
+  .done((response) => {
+    console.log(response);
+    const $questionList = $('#question-list'); //calling element bc of $('...')
+    $questionList.empty();
+
+    for(const question of response.questions) {
+      const $questionRow = questionRow(question);
+      $questionList.append($questionRow);
     }
   });
 });
