@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/create', (req, res) => {
-  res.render('create_quiz3');
+  res.render('create_quiz');
 });
 
 app.post('/quizzes', (req, res) => {
