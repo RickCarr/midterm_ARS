@@ -24,7 +24,5 @@ const getQuizzes = () => {
 //       return data.rows;
 //     });
 // };
-git commit . "commiting to hold present branch files in present flu
-x due to partial code changes suggested by ment
-or. testing vs master branch"
+
 module.exports = { getQuizzes/*, getQuizByID */};
