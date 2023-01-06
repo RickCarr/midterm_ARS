@@ -5,3 +5,5 @@ CREATE TABLE answers (
   answer VARCHAR(255) NOT NULL,
   is_correct BOOLEAN
   );
+
+ALTER SEQUENCE answers_id_seq RESTART WITH 100;

@@ -6,3 +6,5 @@ CREATE TABLE quizzes (
   quiz_url VARCHAR(255),
   user_id INTEGER REFERENCES users(id)
   );
+
+ALTER SEQUENCE quizzes_id_seq RESTART WITH 100;
