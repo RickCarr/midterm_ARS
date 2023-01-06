@@ -44,11 +44,7 @@ const question3 = (questionData) => {
 
 const answer = (answerData) => {
   const answerElement = `
-  <label>Answer
-    <br>
-    <label id="answer">${answerData.answer}</label>
-    <br>
-  </label>`;
+    <label id="answer">${answerData.answer}</label>`;
   return answerElement;
 };
 
