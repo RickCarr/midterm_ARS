@@ -8,13 +8,13 @@ const getQuestions = () => {
 };
 
 const getQuestionsByQuizID = (quizID) => {
-  return db.query(`SELECT question
-                     FROM questions
-                     JOIN quizzes ON quizzes.id = questions.quiz_id
-                     WHERE questions.quiz_id = $1
-                     GROUP By question
-                    ORDER BY answers.id
-                  ;`, [quizID])
+  return db.query(`
+    SELECT question, (SELECT quizzes.id)
+    FROM questions
+    JOIN quizzes ON quizzes.id = questions.quiz_id
+    WHERE questions.quiz_id = $1
+    ORDER BY questions.id
+    ;`, [quizID])
     .then(data => {
       return data.rows;
     });

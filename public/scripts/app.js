@@ -10,47 +10,104 @@ const tableRow = (quizData) => {
   <td>
     ${quizData.user_name}
   </td>
-</tr>`
-return trElement;
+</tr>`;
+  return trElement;
 };
 
-const questionRow = (questionData) => {
+const question1 = (questionData) => {
   const questionElement = `
-  <label>Question</label>
-  <a id="question">${questionData.question}</a>
-  <br>`
+  <label>Question 1
+    <br>
+    <label id="question">${questionData.question}</label>
+    <br>
+  </label>`;
+  return questionElement;
+};
+const question2 = (questionData) => {
+  const questionElement = `
+  <label>Question 2
+    <br>
+    <label id="question">${questionData.question}</label>
+    <br>
+  </label>`;
+  return questionElement;
+};
+const question3 = (questionData) => {
+  const questionElement = `
+  <label>Question 3
+    <br>
+    <label id="question">${questionData.question}</label>
+    <br>
+  </label>`;
+  return questionElement;
+};
 
-return questionElement;
-}
-
+const answer = (answerData) => {
+  const answerElement = `
+  <label>Answer
+    <br>
+    <label id="answer">${answerData.answer}</label>
+    <br>
+  </label>`;
+  return answerElement;
+};
 
 $(() => {
   $.ajax({
     method: 'GET',
     url: '/api/quizzes'
   })
-  .done((response) => {
-    const $quizList = $('#quiz-list'); //calling element bc of $('...')
-    $quizList.empty();
+    .then((response) => {
+      const $quizList = $('#quiz-list'); //calling element bc of $('...')
+      $quizList.empty();
 
-    for(const quiz of response.quizzes) {
-      const $tableRow = tableRow(quiz);
-      $quizList.append($tableRow);
-    }
-  });
+      for (const quiz of response.quizzes) {
+        const $tableRow = tableRow(quiz);
+        $quizList.append($tableRow);
+      }
+    });
 
   $.ajax({
     method: 'GET',
     url: '/api/questions'
   })
-  .done((response) => {
-    console.log(response);
-    const $questionList = $('#question-list'); //calling element bc of $('...')
-    $questionList.empty();
-
-    for(const question of response.questions) {
-      const $questionRow = questionRow(question);
-      $questionList.append($questionRow);
-    }
-  });
+    .then((response) => {
+      const $q1 = question1(response.questions[0]);
+      const $q2 = question2(response.questions[1]);
+      const $q3 = question3(response.questions[2]);
+      $('#question1').append($q1);
+      $('#question2').append($q2);
+      $('#question3').append($q3);
+    });
+  $.ajax({
+    method: 'GET',
+    url: '/api/answers'
+  })
+    .done((response) => {
+      console.log(response);
+      const $a1 = answer(response.answers[0]);
+      const $a2 = answer(response.answers[1]);
+      const $a3 = answer(response.answers[2]);
+      const $a4 = answer(response.answers[3]);
+      const $a5 = answer(response.answers[4]);
+      const $a6 = answer(response.answers[5]);
+      const $a7 = answer(response.answers[6]);
+      const $a8 = answer(response.answers[7]);
+      const $a9 = answer(response.answers[8]);
+      const $a10 = answer(response.answers[9]);
+      const $a11 = answer(response.answers[10]);
+      const $a12 = answer(response.answers[11]);
+      $('#answer1').append($a1);
+      $('#answer2').append($a2);
+      $('#answer3').append($a3);
+      $('#answer4').append($a4);
+      $('#answer5').append($a5);
+      $('#answer6').append($a6);
+      $('#answer7').append($a7);
+      $('#answer8').append($a8);
+      $('#answer9').append($a9);
+      $('#answer10').append($a10);
+      $('#answer11').append($a11);
+      $('#answer12').append($a12);
+    });
 });
