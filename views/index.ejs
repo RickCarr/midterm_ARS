@@ -17,27 +17,30 @@
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
 </head>
-
 <body>
   <header>
     <%- include('partials/_header') %>
   </header>
-
   <main class="container">
     <section class="buttons">
+      <div>
       <a href="/create">
         <button class="create-button">Create Quiz</button>
       </a>
       <a href="/take/">
       <button class="rng-button">Random Quiz</button>
       </a>
-      <div>
         <input type="number" name="quiz_id" placeholder="Enter Quiz ID">
-
         <button class="button">✅</button>
       </div>
+      <br>
     </section>
     <table class="table">
+      <style>
+        table, th, td {
+  border: 1px solid black;
+}
+      </style>
         <thead>
           <tr>
             <th scope="col">ID</th>
